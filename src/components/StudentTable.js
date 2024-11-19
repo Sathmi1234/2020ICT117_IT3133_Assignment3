@@ -3,14 +3,26 @@ export default function StudentTable(props){
     return(
         <div className="outerDiv">
             <div className='leftDiv'>
-                <table>
-                    <tbody>
-                        <th>
+                <table border='1'>
+                    <thead>
+                        <tr>
                             <td>First Name</td>
                             <td>Last Name</td>
                             <td>Course</td>
                             <td>Country</td>
-                        </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            props.students.map(student=>
+                                <tr>
+                                    <td>{student.firstName}</td>
+                                    <td>{student.lastName}</td>
+                                    <td>{student.course}</td>
+                                    <td>{student.address.country}</td>
+                                </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
