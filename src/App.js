@@ -4,18 +4,22 @@ import {students} from './assets/data/StudentsDb'
 import StudentTable from './components/StudentTable';
 
 function App() {
-  const [size,setSize]=useState(20);
-
-  
+  const [fontSize,setFontSize]=useState('20px');
+  const handleFontSizeChange=(size)=>{
+    const sizes = {small:'16px',medium:'20px',large:'24px'};
+    setFontSize(sizes[size])
+  }
 
   return (
-    <div className="App">
+    <div className="App" style={{ fontFamily: 'Arial', fontSize}}>
       <h1>Student Information Portal</h1>
       <hr/>
-      Font Size:
-      <button onClick={()=>setSize(16)}>S</button>
-      <button onClick={()=>setSize(20)}>M</button>
-      <button onClick={()=>setSize(24)}>L</button>
+      <div>
+        Font Size:
+        <button onClick={()=>handleFontSizeChange('small')}>S</button>
+        <button onClick={()=>handleFontSizeChange('medium')}>M</button>
+        <button onClick={()=>handleFontSizeChange('large')}>L</button>
+      </div>
       <table width="100%">
         <tbody>
           <tr>
