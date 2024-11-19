@@ -1,36 +1,35 @@
 
-export default function Profile({student}){
-    
+export default function Profile({selectedStudent}){    
     return(
-        <div>
+        <div className="rightDiv">
             <table border='1'>
                 <tr>
                     <td rowSpan={8}>
                         <img className="profile"
-                            src={require(`../assets/img/${student.profilePic}`)}
+                            src={require(`../assets/img/${selectedStudent.profilePic}`)}
                             alt="Profile"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>ID: {student.studentId}</td>
+                    <td>ID: {selectedStudent.studentId}</td>
                 </tr>
                 <tr>
-                    <td>Full Name: {student.firstName} {student.lastName}</td>
+                    <td>Full Name: {selectedStudent.firstName} {selectedStudent.lastName}</td>
                 </tr>
                 <tr>
-                    <td>Age: {student.age}</td>
+                    <td>Age: {selectedStudent.age}</td>
                 </tr>
                 <tr>
-                    <td>Course: {student.course}</td>
+                    <td>Course: {selectedStudent.course}</td>
                 </tr>
                 <tr>
-                    <td>Gender: {student.gender}</td>
+                    <td>Gender: {selectedStudent.gender}</td>
                 </tr>
                 <tr>
-                    <td>Address: {student.address.city}, {student.address.country}</td>
+                    <td>Address: {selectedStudent.address.city}, {selectedStudent.address.country}</td>
                 </tr>
                 <tr>
-                    <td>Skill: {student.skills}</td>
+                    <td>Skill: {selectedStudent.skills.join(', ')}</td>
                 </tr>
             </table>
         </div>
