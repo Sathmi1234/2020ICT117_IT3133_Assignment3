@@ -1,4 +1,6 @@
+
 export default function Profile(){
+    
     return(
         <div className="rightDiv">
             <table border='1'>
