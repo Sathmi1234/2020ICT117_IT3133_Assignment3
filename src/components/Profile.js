@@ -1,36 +1,36 @@
 
-export default function Profile(){
+export default function Profile({student}){
     
     return(
-        <div className="rightDiv">
+        <div>
             <table border='1'>
                 <tr>
                     <td rowSpan={8}>
                         <img className="profile"
-                            //src={require('../assets/profilepic/'+props.student.profilePic)}
+                            src={require(`../assets/img/${student.profilePic}`)}
                             alt="Profile"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>ID</td>
+                    <td>ID: {student.studentId}</td>
                 </tr>
                 <tr>
-                    <td>Full Name</td>
+                    <td>Full Name: {student.firstName} {student.lastName}</td>
                 </tr>
                 <tr>
-                    <td>Age</td>
+                    <td>Age: {student.age}</td>
                 </tr>
                 <tr>
-                    <td>Course</td>
+                    <td>Course: {student.course}</td>
                 </tr>
                 <tr>
-                    <td>Gender</td>
+                    <td>Gender: {student.gender}</td>
                 </tr>
                 <tr>
-                    <td>Address</td>
+                    <td>Address: {student.address.city}, {student.address.country}</td>
                 </tr>
                 <tr>
-                    <td>Skill</td>
+                    <td>Skill: {student.skills}</td>
                 </tr>
             </table>
         </div>
